@@ -58,4 +58,12 @@ public class UserService {
             throw new RecordNotFound("Record not found");
         }
     }
+
+    public User findUserByPhone(Long phoneNumber) {
+        return userRepository.findByPhone(phoneNumber);
+    }
+
+    public void deleteUserByPhone(Long phone) {
+        userRepository.deleteByPhone(phone);
+    }
 }
