@@ -6,8 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty"},
-        features = "test/resources/features"
+        features = "D:/WorkSpaces/Learning/BDD/BddSpringboot/src/test/resources/features",
+        plugin = {"pretty", "html:src/test/report/cucumber.html"},
+        dryRun = false
+//        tags = "@Create2"
+//        name={"Addition"}
 )
 public class CucumberRunner {
 }

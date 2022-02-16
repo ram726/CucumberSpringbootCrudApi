@@ -1,8 +1,11 @@
 package com.example.BddSpringboot.cucumber;
 
 import lombok.*;
+import org.springframework.lang.NonNull;
+
 import javax.persistence.*;
-import java.util.Date;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Getter
 @Setter
@@ -19,11 +22,13 @@ public class User {
     @Column(name = "userId",nullable = false)
     private Integer uId;
     @Column(name = "name")
+    @NotNull
+    @Size(min = 3,message = "Name should have at least 2 characters")
     private String name;
     @Column(name = "address")
     private String address;
     @Column(name = "phone")
-    private String phone;
+    private Long phone;
     @Column(name = "gender")
     private String gender;
 }
